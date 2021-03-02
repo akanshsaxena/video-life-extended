@@ -24,7 +24,19 @@ code {
 .navLink {
   text-decoration: none;
 }
-
+.navLink > h1 {
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: -10px;
+  letter-spacing: 0.25rem;
+}
+.navLink > p {
+  cursor: pointer;
+  padding: 0;
+  margin-top: -8px;
+  font-size: 0.8rem;
+  letter-spacing: 0.3rem;
+}
 .section-container {
   margin: 0 auto;
   position: relative;
@@ -80,30 +92,37 @@ code {
   padding: 2px 3px;
 }
 
+.card-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 0 0 10px;
+}
 .video-title {
-  padding: 10px;
   font-size: 0.8rem;
   color: #007789;
-  font-size: 1.1rem;
 }
 
+.card-details > p {
+  font-size: 0.7rem;
+  margin-top: -5px;
+}
 /***Player page***/
 .player-container {
-	
   width: 60%;
   margin: 10px auto;
   /* background: #efefef; */
 }
-.react-player{
-	border:while 1px solid;
-margin-top: 100px;
+.react-player {
+  border: while 1px solid;
+  margin-top: 100px;
 }
 
 .video-details-1,
 .video-details-2 {
   margin: 20px 0;
   border: 1px solid #d7d7d7;
-  padding: 15px;
+  padding: 20px;
   -webkit-box-shadow: 2px 4px 7px -1px rgba(0, 0, 0, 0.28);
   -moz-box-shadow: 2px 4px 7px -1px rgba(0, 0, 0, 0.28);
   box-shadow: 2px 4px 7px -1px rgba(0, 0, 0, 0.28);
@@ -113,7 +132,10 @@ margin-top: 100px;
   display: flex;
   justify-content: space-between;
 }
-
+.video-details-1 > div {
+  display: flex;
+  flex-direction: column;
+}
 .video-details-1 > div > h3 {
   color: #ff5733;
   display: inline;
@@ -121,23 +143,41 @@ margin-top: 100px;
 }
 
 .video-details-1 > div > img {
-  width: 100px;
+  width: 150px;
 }
 
 .video-details-1 > div > p {
   text-align: right;
+  margin: 0;
+  padding: 0;
 }
 
-.video-details-2-div {
-  margin: 10px;
+.video-details-2 {
+  margin: 0;
 }
 
+.video-details-2-div > h4 {
+  font-size: 0.9rem;
+  margin: 0;
+  font-size: 1.05rem;
+  color: white;
+}
 .video-details-2-div > p {
   font-size: 0.9rem;
+  color: white;
 }
-.basic-details{
-	color: white;
-	font-size: 0.95rem;
+.category {
+  position: absolute;
+  bottom: -50%;
+  color: white;
+  font-size: 0.8rem;
+  background: green;
+  border-radius: 4px;
+  padding: 2px 7px;
+}
+.basic-details {
+  color: white;
+  font-size: 0.95rem;
 }
 /*Header*/
 .header-container {
@@ -158,6 +198,7 @@ margin-top: 100px;
 
 .header-color {
   color: white;
+  font-size: 1.1rem;
 }
 
 /*Search*/

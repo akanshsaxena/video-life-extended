@@ -11,8 +11,8 @@ export default function Header(props) {
     <div className="header-container">
       <div className="header">
         <NavLink className="navLink header-color" to="/">
-          <h1> ठीकBaa </h1>
-        </NavLink>
+          <h1> Video </h1> <p> LIFE EXTENDED</p>{" "}
+        </NavLink>{" "}
         <div className="search-box">
           <input
             type="text"
@@ -20,18 +20,20 @@ export default function Header(props) {
             onChange={handleChange}
             value={search}
             placeholder="Search with a title"
-          />
+          />{" "}
           {search == "" ? (
             <NavLink className="btn disabled" to="#">
+              {" "}
               🔍
             </NavLink>
           ) : (
             <NavLink className="btn" to={`/search/${search}`}>
+              {" "}
               🔍
             </NavLink>
-          )}
-        </div>
-      </div>
+          )}{" "}
+        </div>{" "}
+      </div>{" "}
     </div>
   );
 }

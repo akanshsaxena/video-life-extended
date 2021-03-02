@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 // eslint-disable-next-line
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import SearchVideo from "./components/video/SearchVideo";
@@ -12,17 +12,17 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Dashboard />
-        </Route>{" "}
+        </Route>
         <Route exact path="/video/:_id">
           <PlayVideo />
-        </Route>{" "}
+        </Route>
         <Route exact path="/search/:search">
           <SearchVideo />
-        </Route>{" "}
+        </Route>
         <Route exact path="/adminupload">
           <UploadVideo />
-        </Route>{" "}
-      </Switch>{" "}
+        </Route>
+      </Switch>
     </BrowserRouter>
   );
 }

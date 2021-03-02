@@ -1,21 +1,12 @@
-import React, {
-  useState,
-  useEffect
-} from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import {
-  NavLink,
-  useParams
-} from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import VideoCard from "./VideoCard";
 import Header from "../Header";
 
 export default function ViewVideo(props) {
   const [videoData, setVideoData] = useState([]);
-  const {
-    sort,
-    message
-  } = props;
+  const { sort, message } = props;
   /********
   Sort values can be: 
   if(1) sort by views
@@ -35,43 +26,27 @@ export default function ViewVideo(props) {
     console.log(videoData);
   }, []);
 
-  return ( <
-    div className = "section-container" >
-    <
-    h3 className = "message" > {
-      message
-    } < /h3> <
-    div className = "video-card-container" > {
-      sort === "1" ?
-      videoData
-      .sort((a, b) => b.views - a.views)
-      .map((video) => ( <
-        NavLink className = "navLink"
-        to = {
-          `/video/${video._id}`
-        } >
-        <
-        VideoCard video = {
-          video
-        }
-        /> < /
-        NavLink >
-      )) : videoData
-        .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
-        .map((video) => ( <
-          NavLink className = "navLink"
-          to = {
-            `/video/${video._id}`
-          } >
-          <
-          VideoCard video = {
-            video
-          }
-          /> < /
-          NavLink >
-        ))
-    } <
-    /div> < /
-    div >
+  return (
+    <div className="section-container">
+      <h3 className="message"> {message} </h3>{" "}
+      <div className="video-card-container">
+        {" "}
+        {sort === "1"
+          ? videoData
+              .sort((a, b) => b.views - a.views)
+              .map((video) => (
+                <NavLink className="navLink" to={`/video/${video._id}`}>
+                  <VideoCard video={video} />{" "}
+                </NavLink>
+              ))
+          : videoData
+              .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+              .map((video) => (
+                <NavLink className="navLink" to={`/video/${video._id}`}>
+                  <VideoCard video={video} />{" "}
+                </NavLink>
+              ))}{" "}
+      </div>{" "}
+    </div>
   );
 }

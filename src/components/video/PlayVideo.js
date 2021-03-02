@@ -52,7 +52,7 @@ export default function PlayVideo() {
         onChangeCallback={handleChange}
         onClickCallback={handleClick}
         searchText={searchText}
-      />{" "}
+      />
       <div className="player-container">
         <ReactPlayer
           className="react-player"
@@ -60,32 +60,28 @@ export default function PlayVideo() {
           width="100%"
           height="100%"
           controls={true}
-        />{" "}
+        />
         <div className="video-details-1">
           <div>
             <img src={thumbnailPath} /> <h3> {videoData.title} </h3>
-          </div>{" "}
+          </div>
           <div>
-            <p className="basic-details"> Published On {videoData.createdAt} </p> <br />
-            <p className="basic-details">
-              {" "}
-              {videoData.views}
-              views{" "}
-            </p>{" "}
-          </div>{" "}
-        </div>{" "}
+            <p className="basic-details">Published On {videoData.createdAt}</p>
+            <br />
+            <p className="basic-details"> {videoData.views} view(s) </p>
+            {/* <div className="category">
+              <p> {videoData.category} </p>
+            </div> */}
+          </div>
+        </div>
         <div className="video-details-2">
           <div className="video-details-2-div">
             <h4> Category: </h4> <p> {videoData.category} </p>
-          </div>{" "}
-          <div className="video-details-2-div">
             <h4> Description: </h4> <p> {videoData.description} </p>
-          </div>{" "}
-          <div className="video-details-2-div">
             <h4> Tags: </h4> <p> {videoData.tags} </p>
-          </div>{" "}
-        </div>{" "}
-      </div>{" "}
+          </div>
+        </div>
+      </div>
     </>
   );
 }

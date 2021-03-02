@@ -6,8 +6,8 @@ export default function Dashboard() {
   return (
     <>
       <Header />
-      <ViewVideo sort="1" message="By Views" />
       <ViewVideo sort="2" message="Newest first" />
+      <ViewVideo sort="1" message="By Views" />
     </>
   );
 }
